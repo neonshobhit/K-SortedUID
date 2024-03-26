@@ -1,4 +1,4 @@
-package main
+package KSortedUID
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ var mp map[string]int = make(map[string]int);
 var node string = "."
 var maxBigInt = big.NewInt(1002342342334234213)
 
-func sortedBase64Encode(inp string) (string) {
+func SortedBase64Encode(inp string) (string) {
 	var padding = len(inp) % 3;
 	var length = len(inp) - padding
 	var i int = 0
@@ -44,7 +44,7 @@ func sortedBase64Encode(inp string) (string) {
 	return output
 }
 
-func sorteBase64Decode(inp string) (string) {
+func SorteBase64Decode(inp string) (string) {
 	var i int = 0;
 	var length = len(inp)
 	output := ""
@@ -73,7 +73,7 @@ func sorteBase64Decode(inp string) (string) {
 func GenerateId() string {
 	randomNumber, _ := rand.Int(rand.Reader, maxBigInt)
 	var id = string(strconv.FormatInt(time.Now().UnixMilli(), 10)) + node + randomNumber.String()
-	return sortedBase64Encode(id)
+	return SortedBase64Encode(id)
 }
 
 func PerfTest(length int) {
