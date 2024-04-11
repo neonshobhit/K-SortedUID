@@ -2,21 +2,22 @@
 
 ## Overview
 
-This Go package provides functionality for generating sorted Base64-encoded IDs and performance testing the ID generation process. The package includes methods for encoding and decoding strings using a sorted Base64 encoding scheme, as well as a method for generating unique IDs based on the current time and random numbers.
+This Go package provides functionality for generating sorted Base64-encoded IDs and performance testing the ID generation process. The package includes methods for encoding and decoding strings using a K-sorted Base64 encoding scheme.
 
-## Installation
-
-To use this package, ensure you have Go installed on your system. Then, you can install the package using `go get`:
-
-```bash
-go get github.com/your-username/your-package-name
-```
 
 ## Generating IDs
 To generate a unique ID, call the GenerateId function:
 
 ```bash
-id := yourpackagename.GenerateId()
+id := KSortedUID.GenerateId()
+```
+
+## Ids Examples
+Ids looks like this after generation:
+```bash
+.NvE9rA62_5B2C1eqjM
+.NvEA5nD5AfCQVthfMp
+.NvEB1VA59_Rd.nRTAB
 ```
 
 ## Performance Testing
@@ -26,3 +27,7 @@ The package includes a performance testing function PerfTest to measure the time
 KSortedUID.PerfTest(length)
 ```
 
+## Credits
+https://firebase.blog/posts/2015/02/the-2120-ways-to-ensure-unique_68
+
+https://github.com/twitter-archive/snowflake?tab=readme-ov-file
